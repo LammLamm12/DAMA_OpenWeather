@@ -86,18 +86,17 @@ class WeatherDetails {
 
     }
 
+    // update ui
+
     fun getTemperature(): String {
         return "$apiTemperature°C"
     }
-
     fun getCity(): String {
         return apiCity
     }
-
     fun getIcon(): String {
         return apiIcon
     }
-
     fun getCoord(): String {
         return "Lat: $apiLat Lon: $apiLon"
     }

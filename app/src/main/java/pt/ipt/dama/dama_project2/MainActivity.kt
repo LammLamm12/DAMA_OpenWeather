@@ -73,13 +73,13 @@ class MainActivity : AppCompatActivity() {
         val mIntent = intent
         val city = mIntent.getStringExtra("City")
         if (city != null ) {
-            getWeatherForNewCity(city)
+            getNewCity(city)
         } else {
-            getWeatherForCurrentLocation()
+            getCurrentLocation()
         }
     }
 
-    private fun getWeatherForNewCity(city: String) {
+    private fun getNewCity(city: String) {
         val params = RequestParams()
         params.put("q", city)
         params.put("appID", appID)
@@ -87,7 +87,7 @@ class MainActivity : AppCompatActivity() {
     }
 
         // Current location must be set in extended controls
-    private fun getWeatherForCurrentLocation() {
+    private fun getCurrentLocation() {
         mLocationManager = getSystemService(Context.LOCATION_SERVICE) as LocationManager
         mLocationListener = object : LocationListener {
             override fun onLocationChanged(location: Location) {
@@ -100,16 +100,9 @@ class MainActivity : AppCompatActivity() {
                 letsDoSomeNetworking(params)
             }
 
+            // Used to fix error
             @Deprecated("Deprecated in Java")
             override fun onStatusChanged(provider: String?, status: Int, extras: Bundle?) {
-            }
-
-            override fun onProviderDisabled(provider: String) {
-
-            }
-
-            override fun onProviderEnabled(provider: String) {
-
             }
 
 
@@ -147,7 +140,7 @@ class MainActivity : AppCompatActivity() {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
         if (requestCode == this.requestCode) {
             if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                getWeatherForCurrentLocation()
+                getCurrentLocation()
             } else {
                 // user denied the permission
             }
