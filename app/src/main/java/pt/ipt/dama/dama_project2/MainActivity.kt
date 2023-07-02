@@ -58,6 +58,14 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, CityFinder::class.java)
             startActivity(intent)
         }
+
+        val fragment1: Button = findViewById(R.id.fragment1)
+
+        fragment1.setOnClickListener {
+            val intent = Intent(this, Translation::class.java)
+            startActivity(intent)
+        }
+
     }
 
     override fun onResume() {
@@ -181,4 +189,5 @@ class MainActivity : AppCompatActivity() {
         coordinates.text = weather.getCoord()
         weatherIcon.setImageResource(resourceId)
     }
+
 }
