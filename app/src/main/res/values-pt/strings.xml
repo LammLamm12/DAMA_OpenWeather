@@ -1,16 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">DAMA_Project2</string>
     <string name="enter_city_name">Nova Cidade</string>
-    <string name="want_to_search_for_new_city">Procurar por nova cidade</string>
-    <string name="fetching">Procurando</string>
+    <string name="want_to_search_for_new_city">Procurar por Nova cidade</string>
+    <string name="fetching">Procurando......</string>
     <string name="coordinates">Coordenadas</string>
     <string name="weather">Tempo</string>
-    <string name="back">Voltar</string>
-    <string name="Language">Language</string>
+    <string name="back">Regressar</string>
+    <string name="Language">Língua</string>
     <string name="english">English</string>
-    <string name="portuguese">Portuguese</string>
+    <string name="portuguese">Português</string>
     <string name="confirm">Confirmar</string>
-    <string name="save">Save</string>
-    <string name="settings">Settings</string>
+    <string name="save">Guardar</string>
+    <string name="settings">Definições</string>
 </resources>

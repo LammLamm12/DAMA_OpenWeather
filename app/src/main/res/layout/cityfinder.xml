@@ -21,19 +21,19 @@
 
     <EditText
         android:id="@+id/searchCity"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
+        android:layout_width="400dp"
+        android:layout_height="48dp"
+        android:layout_centerInParent="true"
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"
+        android:autofillHints=""
         android:background="@drawable/edittextdesign"
         android:gravity="center_vertical|center_horizontal"
         android:hint="@string/enter_city_name"
         android:imeOptions="actionGo"
         android:inputType="textAutoCorrect"
         android:textColor="@color/black"
-        android:textSize="20sp"
-        android:autofillHints="" />
+        android:textColorHint="#78909C"
+        android:textSize="20sp" />
 
 </RelativeLayout>

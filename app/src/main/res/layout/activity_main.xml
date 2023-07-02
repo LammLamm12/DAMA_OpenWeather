@@ -84,7 +84,7 @@
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:text="@string/want_to_search_for_new_city"
-            android:textColor="#ffffff"
+            android:textColor="#5D4037"
             android:textSize="16sp" />
 
     </RelativeLayout>
