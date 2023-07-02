@@ -29,6 +29,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var temperature: TextView
     private lateinit var cityName: TextView
     private lateinit var weatherCondition: TextView
+    private lateinit var coordinates: TextView
     private lateinit var weatherIcon: ImageView
 
     // To avoid constant
@@ -48,6 +49,7 @@ class MainActivity : AppCompatActivity() {
         temperature = findViewById(R.id.temperature)
         cityName = findViewById(R.id.cityName)
         weatherCondition = findViewById(R.id.weatherCondition)
+        coordinates = findViewById(R.id.coordinates)
         weatherIcon = findViewById(R.id.weatherIcon)
 
         val cityFinder: RelativeLayout = findViewById(R.id.cityFinder)
@@ -153,7 +155,6 @@ class MainActivity : AppCompatActivity() {
                 response: JSONObject
             ) {
 
-                //Toast.makeText(this@MainActivity, "Data Get Success", Toast.LENGTH_SHORT).show()
                 val weatherD: WeatherDetails? = WeatherDetails.fromJson(response)
                 if (weatherD != null) {
                     updateUI(weatherD)
@@ -177,6 +178,7 @@ class MainActivity : AppCompatActivity() {
         cityName.text = weather.getCity()
         weatherCondition.text = weather.apiWeather
         val resourceId = resources.getIdentifier(weather.getIcon(), "drawable", packageName)
+        coordinates.text = weather.getCoord()
         weatherIcon.setImageResource(resourceId)
     }
 }

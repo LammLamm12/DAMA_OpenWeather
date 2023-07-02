@@ -9,7 +9,7 @@ import android.widget.ImageView
 class CityFinder : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_city_finder)
+        setContentView(R.layout.cityfinder)
         val editText = findViewById<EditText>(R.id.searchCity)
         val backButton = findViewById<ImageView>(R.id.backButton)
 

@@ -11,7 +11,8 @@
         android:layout_width="match_parent"
         android:layout_height="300dp"
         android:layout_marginTop="80dp"
-        android:src="@drawable/images" />
+        android:src="@drawable/images"
+        android:contentDescription="@string/weather" />
 
 
     <LinearLayout
@@ -27,9 +28,20 @@
             android:layout_height="wrap_content"
             android:paddingStart="30dp"
             android:paddingEnd="0sp"
-            android:text="0*C"
+            android:text="@string/temperature"
             android:textColor="#ffffff"
             android:textSize="50sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/coordinates"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="30dp"
+            android:paddingEnd="0sp"
+            android:text="@string/coordinates"
+            android:textColor="#ffffff"
+            android:textSize="20sp"
             android:textStyle="bold" />
 
         <TextView
@@ -48,7 +60,7 @@
             android:layout_height="wrap_content"
             android:paddingStart="30sp"
             android:paddingEnd="0sp"
-            android:text="Fetching......."
+            android:text="@string/fetching"
             android:textColor="#ffffff"
             android:textSize="40sp"
             android:textStyle="bold" />

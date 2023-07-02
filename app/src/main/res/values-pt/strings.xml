@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">DAMA_Project2</string>
+    <string name="enter_city_name">Nova Cidade</string>
+    <string name="want_to_search_for_new_city">Procurar por nova cidade</string>
+    <string name="fetching">Procurando</string>
+    <string name="coordinates">Coordenadas</string>
+    <string name="weather">Tempo</string>
+    <string name="back">Voltar</string>
+</resources>

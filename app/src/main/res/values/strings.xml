@@ -1,6 +1,11 @@
 <resources>
-    <string name="app_name">DAMA_Project2</string>
+    <string name="app_name" translatable="false">DAMA_Project2</string>
     <string name="enter_city_name">Enter City Name</string>
-    <string name="padding">-----------</string>
+    <string name="padding" translatable="false">-----------</string>
     <string name="want_to_search_for_new_city">Want to Search for New City</string>
+    <string name="fetching">Fetching.......</string>
+    <string name="temperature" translatable="false">0*C</string>
+    <string name="coordinates">Coordinates</string>
+    <string name="weather">Weather</string>
+    <string name="back">back</string>
 </resources>

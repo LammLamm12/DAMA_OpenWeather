@@ -8,11 +8,12 @@ import kotlin.math.round
 class WeatherDetails {
 
     lateinit var apiCity: String
-    lateinit var apiTemperature: String
-    lateinit var apiIcon: String
-
-    lateinit var apiWeather: String
     var apiWeatherID = 0
+    lateinit var apiIcon: String
+    lateinit var apiWeather: String
+    var apiLat = 0
+    var apiLon = 0
+    lateinit var apiTemperature: String
 
     companion object {
         fun fromJson(jsonObject: JSONObject): WeatherDetails? {
@@ -24,6 +25,9 @@ class WeatherDetails {
                 weatherD.apiIcon = updateWeatherIcon(weatherD.apiWeatherID)
                 weatherD.apiWeather =
                     jsonObject.getJSONArray("weather").getJSONObject(0).getString("main")
+                weatherD.apiLat = jsonObject.getJSONObject("coord").getInt("lat")
+                weatherD.apiLon = jsonObject.getJSONObject("coord").getInt("lon")
+
 
                 val tempResult = jsonObject.getJSONObject("main").getDouble("temp") - 273.15
                 val roundedValue = round(tempResult).toInt()
@@ -92,6 +96,10 @@ class WeatherDetails {
 
     fun getIcon(): String {
         return apiIcon
+    }
+
+    fun getCoord(): String {
+        return "Lat: $apiLat Lon: $apiLon"
     }
 
 }
