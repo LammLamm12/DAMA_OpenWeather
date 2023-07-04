@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name" translatable="false">DAMA_Project2</string>
+    <string name="app_name" translatable="false">DAMA_OpenWeather</string>
     <string name="enter_city_name">New City Name</string>
     <string name="padding" translatable="false">-----------</string>
     <string name="want_to_search_for_new_city">Search for New City</string>

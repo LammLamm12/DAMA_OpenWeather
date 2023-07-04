@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace 'pt.ipt.dama.dama_project2'
+    namespace 'pt.ipt.dama.dama_openweather'
     compileSdk 33
 
     defaultConfig {
-        applicationId "pt.ipt.dama.dama_project2"
+        applicationId "pt.ipt.dama.dama_openweather"
         minSdk 26
         targetSdk 33
         versionCode 1

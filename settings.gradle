@@ -12,5 +12,5 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
-rootProject.name = "DAMA_Project2"
+rootProject.name = "DAMA_OpenWeather"
 include ':app'

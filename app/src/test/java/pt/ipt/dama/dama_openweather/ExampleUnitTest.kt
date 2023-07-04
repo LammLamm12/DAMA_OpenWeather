@@ -1,4 +1,4 @@
-package pt.ipt.dama.dama_project2
+package pt.ipt.dama.dama_openweather
 
 import org.junit.Test
 
