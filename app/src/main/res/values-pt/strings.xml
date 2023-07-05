@@ -12,4 +12,5 @@
     <string name="confirm">Confirmar</string>
     <string name="save">Guardar</string>
     <string name="settings">Definições</string>
+    <string name="currentLoc">Localização Atual</string>
 </resources>

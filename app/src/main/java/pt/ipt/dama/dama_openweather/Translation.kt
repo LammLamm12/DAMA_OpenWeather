@@ -29,7 +29,8 @@ class Translation : AppCompatActivity() {
             }
 
             setAppLanguage(selectedLanguage)
-            // necessary to change language in main_activity
+            // necessary to change language in main_
+            // activity
             val intent = Intent(this, MainActivity::class.java)
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
             startActivity(intent)

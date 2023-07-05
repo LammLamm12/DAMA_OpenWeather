@@ -58,12 +58,22 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, CityFinder::class.java)
             startActivity(intent)
         }
+        
+        // get to screen with translation
 
-        val fragment1: Button = findViewById(R.id.fragment1)
+        val fragTranslation: Button = findViewById(R.id.fragTranslation)
 
-        fragment1.setOnClickListener {
+        fragTranslation.setOnClickListener {
             val intent = Intent(this, Translation::class.java)
             startActivity(intent)
+        }
+        
+        // get current location by button
+
+        val fragCurrentLoc: Button = findViewById(R.id.fragCurrentLoc)
+
+        fragCurrentLoc.setOnClickListener {
+            getCurrentLocation()
         }
 
     }
