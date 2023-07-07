@@ -22,17 +22,18 @@ import org.json.JSONObject
 class MainActivity : AppCompatActivity() {
 
 
-    // Initialize variables
-    private lateinit var mLocationManager: LocationManager
-    private lateinit var mLocationListener: LocationListener
+    // Initialize location services 
+    private lateinit var locationManager: LocationManager
+    private lateinit var locationListener: LocationListener
 
+    // Initialize variables
     private lateinit var temperature: TextView
     private lateinit var cityName: TextView
     private lateinit var weatherCondition: TextView
     private lateinit var coordinates: TextView
     private lateinit var weatherIcon: ImageView
 
-    // To avoid constant
+    // To use for calling API
     val appID = "e48755deb95906783b53f634b4223e0a"
     private val weatherURL = "https://api.openweathermap.org/data/2.5/weather"
     private val minTime = 5000
@@ -59,7 +60,7 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
         
-        // get to screen with translation
+        // Get to screen with translation
 
         val fragTranslation: Button = findViewById(R.id.fragTranslation)
 
@@ -68,9 +69,9 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
         
-        // get current location by button
+        // Get current location by button
 
-        val fragCurrentLoc: Button = findViewById(R.id.fragCurrentLoc)
+        val fragCurrentLoc: ImageButton  = findViewById(R.id.fragCurrentLoc)
 
         fragCurrentLoc.setOnClickListener {
             getCurrentLocation()
@@ -78,10 +79,11 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+    // Used to direct to the fun that will give us the current location
+
     override fun onResume() {
         super.onResume()
-        val mIntent = intent
-        val city = mIntent.getStringExtra("City")
+        val city = intent.getStringExtra("City")
         if (city != null ) {
             getNewCity(city)
         } else {
@@ -89,17 +91,10 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun getNewCity(city: String) {
-        val params = RequestParams()
-        params.put("q", city)
-        params.put("appID", appID)
-        letsDoSomeNetworking(params)
-    }
-
-        // Current location must be set in extended controls
+    // Current location must be set in extended controls
     private fun getCurrentLocation() {
-        mLocationManager = getSystemService(Context.LOCATION_SERVICE) as LocationManager
-        mLocationListener = object : LocationListener {
+        locationManager = getSystemService(Context.LOCATION_SERVICE) as LocationManager
+        locationListener = object : LocationListener {
             override fun onLocationChanged(location: Location) {
                 val latitude = location.latitude.toString()
                 val longitude = location.longitude.toString()
@@ -107,7 +102,7 @@ class MainActivity : AppCompatActivity() {
                 params.put("lat", latitude)
                 params.put("lon", longitude)
                 params.put("appID", appID)
-                letsDoSomeNetworking(params)
+                getWeatherDetails(params)
             }
 
             // Used to fix error
@@ -134,11 +129,11 @@ class MainActivity : AppCompatActivity() {
 
 
         }
-        mLocationManager.requestLocationUpdates(
+        locationManager.requestLocationUpdates(
             locationProvider,
             minTime.toLong(),
             minDistance.toFloat(),
-            mLocationListener
+            locationListener
         )
     }
 
@@ -157,7 +152,20 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun letsDoSomeNetworking(params: RequestParams) {
+
+
+    //
+    private fun getNewCity(city: String) {
+        val params = RequestParams()
+        params.put("q", city)
+        params.put("appID", appID)
+        getWeatherDetails(params)
+    }
+
+
+    // Obtain weather details from OpenWeather API and update ui
+
+    fun getWeatherDetails(params: RequestParams) {
         val client = AsyncHttpClient()
         client.get(weatherURL, params, object : JsonHttpResponseHandler() {
             override fun onSuccess(

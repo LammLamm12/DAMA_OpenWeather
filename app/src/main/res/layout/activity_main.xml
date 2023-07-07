@@ -44,14 +44,14 @@
                 android:textSize="50sp"
                 android:textStyle="bold" />
 
-            <Button
+            <ImageButton
                 android:id="@+id/fragCurrentLoc"
-                android:layout_width="200dp"
+                android:layout_width="100dp"
                 android:layout_height="70dp"
                 android:layout_marginStart="98dp"
                 android:layout_toEndOf="@id/temperature"
-                android:text="@string/currentLoc" />
-
+                android:src="@drawable/currentlocation"
+                android:contentDescription="@string/currentLoc" />
         </RelativeLayout>
 
         <TextView

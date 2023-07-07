@@ -15,6 +15,8 @@ class WeatherDetails {
     var apiLon = 0
     lateinit var apiTemperature: String
 
+    // Get information from the API
+
     companion object {
         fun fromJson(jsonObject: JSONObject): WeatherDetails? {
             try {
@@ -41,6 +43,7 @@ class WeatherDetails {
 
         }
 
+        // To change image of the weather
         private fun updateWeatherIcon(condition: Int): String {
             when {
                 condition in 0..300 -> {
